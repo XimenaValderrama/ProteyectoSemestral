@@ -1,0 +1,60 @@
+{% extends 'app/base2.html' %}
+{% load static %}
+
+{% block titulo %}
+
+{% endblock %}
+{% block contenido %}
+
+  <!-- CONTAINER -->
+  <div class=" tabla container mt-3" style="text-align:center;">
+      <div class="card">
+          <div class="card-body">
+              <div class="container mt-3">
+                  <h3>Historial de compra</h3>
+                  <table class="table">
+                      <thead>
+                          <tr class="table-success">
+                              <th>Id</th>
+                              <th>Fecha de compra</th>
+                              <th>Artículo</th>
+                              <th>Cantidad</th>
+                              <th>Precio</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <tr class="table-success">
+                              <td>
+                                  <p>2345</p>
+                                  <p>3234</p>
+                                  <p>2890</p>
+                              </td>
+                              <td>
+                                <p>01/04/2022</p>
+                                <p>25/03/2022</p>
+                                <p>15/3/2022</p>
+                            </td>
+                              <td>
+                                  <p>Flores Mi Tierra Clavelina 1,10m</p>
+                                  <p>Tierra de hoja jardín 80L</p>
+                                  <p>Macetero plastico 25cm</p>
+                              </td>
+                              <td>
+                                  <p>2</p>
+                                  <p>3</p>
+                                  <p>2</p>
+                              </td>
+                              <td>
+                                  <p>$790 c/u</p>
+                                  <p>$8.790 c/u</p>
+                                  <p>$4.190 c/u</p>
+                              </td>
+                            </tr> 
+                      </tbody>
+                  </table>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- END CONTAINER -->
+  {% endblock %}

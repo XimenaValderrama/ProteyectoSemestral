@@ -1,0 +1,37 @@
+{% extends 'app/base2.html' %}
+{% load static %}
+
+{% block titulo %}
+
+{% endblock %}
+{% block contenido %}
+
+  <!-- CONTAINER -->
+  <div class="container px-1 px-md-4 py-5 mx-auto">
+      <h4>Seguimiento de despacho
+          
+      </h4>
+      <div class="truck card">
+          <div class="row d-flex justify-content-between px-3 topp">
+              <div class="d-flex">
+                  <h5>ORDEN <span class="text-primary font-weight-bold">#Y34XDHR</span></h5>
+              </div>
+              <div class="d-flex flex-column text-sm-right">
+                  <p class="mb-0">fecha estimada de entrega <span>01/05/2022</span></p>
+              </div>
+          </div> <!-- Add class 'active' to progress -->
+          <div class="row d-flex justify-content-center">
+              <div class="col-12">
+                  <ul id="progressbar" class="text-center">
+                      <li class="active step0">Orden Recibida</li>
+                      <li class="active step0">Orden Enviada</li>
+                      <li class="active step0">Pedido en ruta</li>
+                      <li class="step0">Pedido entregado</li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- END CONTAINER -->
+
+  {% endblock %}

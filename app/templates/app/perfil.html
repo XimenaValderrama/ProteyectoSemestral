@@ -1,0 +1,111 @@
+{% extends 'app/base2.html' %}
+{% load static %}
+
+{% block titulo %}
+
+{% endblock %}
+{% block contenido %}
+
+  <!-- CONTAINER -->
+  <div class="container emp-profile mt-5">
+    <form method="post">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="profile-img">
+                    <img src="{% static 'app//img/perfil.png' %}" alt="" />
+                    <div class="file btn btn-lg btn-primary">
+                        Cambiar Foto
+                        <input type="file" name="file" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="profile-head">
+                    <h3>Mónica Elena Carrasco Muñoz</h3>
+
+                </div>
+            </div>
+            <div class="col-md-2">
+                <button type="button" onclick="msj()" class="btn btn-success" >Cancelar suscripción</button>
+                <a href="{% url 'historial' %}" class="btn align-bottom mt-2">Historial de compra</a>
+                <button type="button" onclick="off()" class="btn btn-warning mt-2" >Cerrar Sesion</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="tab-content profile-tab" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="row">
+                            <div class="col-md-6 mt-3">
+                                <li><i class="icono fas fa-map-marker-alt"></i> Región:
+                                    <input type="region" class="form-control" id="region"
+                                        placeholder="Region Metropolitana" name="region">
+                                </li>
+                            </div>
+                            <div class="col-md-6 mt-3">
+                                <li><i class="icono fas fa-user-check"></i> Rut:
+                                    <input type="rut" class="form-control" id="rut" placeholder="17.695.782-k"
+                                        name="rut">
+                                </li>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mt-3">
+                                <li><i class="icono fas fa-map-signs"></i> Dirección:
+                                    <input type="direccion" class="form-control" id="direccion"
+                                        placeholder="Av. Providencia 1100, Providencia" name="direccion">
+                                </li>
+                            </div>
+                            <div class="col-md-6 mt-3">
+                                <li><i class="fa-solid fa-envelope"></i></i> Correo:
+                                    <input type="correo" class="form-control" id="correo"
+                                        placeholder="mo.carrasco1992@gmail.com" name="correo">
+                                </li>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mt-3">
+                                <li><i class="icono fas fa-calendar-alt"></i> Meses de suscripción:
+                                    <input type="meses" class="form-control" id="meses" placeholder="3 Meses"
+                                        name="meses">
+                                </li>
+                            </div>
+                            <div class="col-md-6 mt-3">
+                                <li><i class="icono fas fa-phone-alt"></i> Teléfono:
+                                    <input type="telefono" class="form-control" id="telefono"
+                                        placeholder="+56978952364" name="telefono">
+                                </li>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mt-3">
+                                <li><i class="icono fas fa-calendar-alt"></i> Fecha vencimiento suscripción:
+                                    <input type="ven" class="form-control" id="ven" placeholder="29/04/2022"
+                                        name="ven">
+                                </li>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mt-3">
+                                <li><i class="fa-solid fa-envelopes-bulk"></i></i> Código postal:
+                                    <input type="codigo" class="form-control" id="codigo" placeholder="8320000"
+                                        name="codigo">
+                                </li>
+                            </div>
+                            <div class="col-md-6 mt-3">
+                                <li><i class="icono fas fa-calendar-alt"></i> Fecha de Nacimiento:
+                                    <input type="nac" class="form-control" id="nac" placeholder="05/09/1992"
+                                        name="nac">
+                                </li>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+  </div>
+ 
+  <!-- END CONTAINER -->
+
+  {% endblock %}

@@ -1,0 +1,8 @@
+
+#pip install -r requirements.txt
+#pip install django-admin-interface
+
+django == 4.0.4
+pillow
+django-admin-interface
+django-crispy-forms

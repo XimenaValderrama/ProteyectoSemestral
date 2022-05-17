@@ -1,0 +1,30 @@
+{% extends 'app/base3.html' %}
+{% load static %}
+{% load crispy_forms_tags  %}
+{% block titulo %}
+
+{% endblock %}
+{% block contenido %}
+
+  <!-- CONTAINER -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <form action="" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <table>
+
+                    {{form|crispy}}
+
+                </table>
+                <input type="submit" class="btn btn-succes" value="Guardar">
+            </form>
+            {{mensaje}}
+            
+        </div>
+    </div>
+</div>
+
+  <!-- END CONTAINER -->
+
+  {% endblock %}

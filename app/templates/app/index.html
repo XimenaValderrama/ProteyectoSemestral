@@ -1,0 +1,129 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block titulo %}
+
+{% endblock %}
+{% block contenido %}
+
+    <!-- CONTAINER -->
+
+    <div class="container container-main" >
+        <div class="col mt-5">
+            <h2>Nuestros productos:</h2>
+            <!-- Fila 1 -->
+            {% load humanize %}
+            <h3>Flores</h3>
+            <div class="row row-cols-lg-6 row-cols-sm-1 row-cols-md-2 mx-5">
+                {% for aux in listaProductos %}
+                {% if aux.tipo.tipo == 'Flores' %}
+                <!-- Tarjeta 1-->
+                <div class="col my-1">
+                    <div class="card h-90 w-100">
+                        {% if aux.imagen %}
+                        <abbr title="Debes registrate para comprar">
+                            <img src="{{ aux.imagen.url }}" class="card-img img-fluid" alt="" style="width: 170px;">
+                        </abbr>
+                        {% else %}
+                        <abbr title="Debes registrate para comprar">
+                            <img src="{% static 'app/img/1.jpg' %}" class="card-img img-fluid" alt=""
+                                style="width: 170px;">
+                        </abbr>
+                        {% endif %}
+
+                        <div class="card-body h-100">
+                            <h5 class="card-title text-dark">{{ aux.nombre | capfirst}}</h5>
+                            <p style="font-size: 100%;" class="card-text mb-2"> Precio: ${{ aux.precio | intcomma}}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endif%}
+                {% endfor%}
+            </div>   
+            <h3>Arbustos</h3>
+            <div class="row row-cols-lg-6 row-cols-sm-1 row-cols-md-2 mx-5">
+                {% for aux in listaProductos %}
+                {% if aux.tipo.tipo == 'Arbustos' %}
+                <!-- Tarjeta 1-->
+                <div class="col my-1">
+                    <div class="card h-90 w-100">
+                        {% if aux.imagen %}
+                        <abbr title="Debes registrate para comprar">
+                            <img src="{{ aux.imagen.url }}" class="card-img img-fluid" alt="" style="width: 170px;">
+                        </abbr>
+                        {% else %}
+                        <abbr title="Debes registrate para comprar">
+                            <img src="{% static 'app/img/1.jpg' %}" class="card-img img-fluid" alt=""
+                                style="width: 170px;">
+                        </abbr>
+                        {% endif %}
+
+                        <div class="card-body h-100">
+                            <h5 class="card-title text-dark">{{ aux.nombre | capfirst}}</h5>
+                            <p style="font-size: 100%;" class="card-text mb-2"> Precio: ${{ aux.precio | intcomma}}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endif%}
+                {% endfor%}
+            </div>
+            <h3>Maceteros</h3>
+            <div class="row row-cols-lg-6 row-cols-sm-1 row-cols-md-2 mx-5">
+                {% for aux in listaProductos %}
+                {% if aux.tipo.tipo == 'Maceteros' %}
+                <!-- Tarjeta 1-->
+                <div class="col my-1">
+                    <div class="card h-90 w-100">
+                        {% if aux.imagen %}
+                        <abbr title="Debes registrate para comprar">
+                            <img src="{{ aux.imagen.url }}" class="card-img img-fluid" alt="" style="width: 170px;">
+                        </abbr>
+                        {% else %}
+                        <abbr title="Debes registrate para comprar">
+                            <img src="{% static 'app/img/1.jpg' %}" class="card-img img-fluid" alt=""
+                                style="width: 170px;">
+                        </abbr>
+                        {% endif %}
+
+                        <div class="card-body h-100">
+                            <h5 class="card-title text-dark">{{ aux.nombre | capfirst}}</h5>
+                            <p style="font-size: 100%;" class="card-text mb-2"> Precio: ${{ aux.precio | intcomma}}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endif%}
+                {% endfor%}
+            </div> 
+
+            <h3>Tierra de hojas</h3>
+            <div class="row row-cols-lg-6 row-cols-sm-1 row-cols-md-2 mx-5">
+                {% for aux in listaProductos %}
+                {% if aux.tipo.tipo == 'Tierra de Hojas' %}
+                <!-- Tarjeta 1-->
+                <div class="col my-1">
+                    <div class="card h-90 w-100">
+                        {% if aux.imagen %}
+                        <abbr title="Debes registrate para comprar">
+                            <img src="{{ aux.imagen.url }}" class="card-img img-fluid" alt="" style="width: 170px;">
+                        </abbr>
+                        {% else %}
+                        <abbr title="Debes registrate para comprar">
+                            <img src="{% static 'app/img/1.jpg' %}" class="card-img img-fluid" alt=""
+                                style="width: 170px;">
+                        </abbr>
+                        {% endif %}
+
+                        <div class="card-body h-100">
+                            <h5 class="card-title text-dark">{{ aux.nombre | capfirst}}</h5>
+                            <p style="font-size: 100%;" class="card-text mb-2"> Precio: ${{ aux.precio | intcomma}}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endif%}
+                {% endfor%}
+            </div>         
+        </div>
+    </div>
+    <!-- END CONTAINER -->
+
+    {% endblock %}

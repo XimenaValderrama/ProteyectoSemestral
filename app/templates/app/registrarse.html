@@ -1,0 +1,43 @@
+{% extends 'app/base4.html' %}
+{% load static %}
+
+{% block titulo %}
+{% load crispy_forms_tags %}
+{% endblock %}
+{% block contenido %}
+<!-- CONTAINER -->
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <!--Columna principal usada para dar forma a la pagina -->
+      <div class="row">
+        <div class="col-sm-2"></div>
+        <!--columna para el margen o para agregar informacion en el crear cuenta-->
+        
+          <div class="col-sm-8">
+            
+            <div class="mb-3 mt-5">
+              <h4>Registro de usuario</h4>
+              <br>
+              <form action="" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <table>
+
+                  {{form|crispy}}
+
+                </table>
+                <input type="submit" class="btn btn-succes mt-3" value="Guardar">
+              </form>
+            </div>
+            {{mensaje}}
+          </div>
+        
+      </div>
+      <div class="col-sm-2"></div>
+    </div>
+  </div>
+</div>
+
+<!-- END CONTAINER -->
+
+{% endblock %}

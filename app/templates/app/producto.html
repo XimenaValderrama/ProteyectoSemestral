@@ -1,0 +1,114 @@
+{% extends 'app/base2.html' %}
+{% load static %}
+
+{% block titulo %}
+
+{% endblock %}
+{% block contenido %}
+
+{% load humanize %}
+  <!-- CONTAINER -->
+  <div class="container container-main">
+      <div class="row ">
+          <div class="col-sm-2 mt-5">
+          </div>
+
+          <div class="col-sm-4 mt-5">
+              <div class="img" >
+                  <img src="{{ DetallesProducto.imagen.url}}">
+              </div>
+          </div>
+
+          <div class="col-sm-4 mt-5">
+            {% load humanize %}
+              <h4 class="card-title text-dark">{{DetallesProducto.nombre}}</h4>
+              <h2>${{DetallesProducto.precio | intcomma}} c/u</h2>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star"></span>
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere voluptatem eum nulla iste explicabo soluta veniam dolorem minus consectetur id exercitationem ab ipsam illum nobis rerum a numquam, sunt adipisci.
+              </p>
+              <p>Ingrese cantidad ({{DetallesProducto.stock}} en stock):</p>
+              <input type="number" placeholder="cant." step="1" min="0" max="20">
+
+              <form action="" method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="nombre_producto" id="nombre_producto" value="{{ DetallesProducto.nombre }}">
+                <input type="hidden" name="precio_producto" id="precio_producto" value="{{ DetallesProducto.precio }}">
+                <input type="hidden" name="imagen_producto" id="imagen_producto" value="{{ DetallesProducto.imagen }}">
+                <button type="submit" class="btn btn-warning "> Añadir<i class="fa-solid fa-dolly"></i></button>
+              </form>
+
+
+          </div>
+
+          <div class="col-sm-2 mt-5">
+          </div>
+      </div>
+  </div>
+  <div class="container px-4 px-lg-5 mt-5">
+      <h2 class="fw-bolder mb-4">Productos Relacionados</h2>
+      <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+          <div class="col mb-5">
+              <div class="card h-100">
+                  <img class="card-img-top" src="{% static 'app/img/2.jpg' %}" alt="..." />
+                  <div class="card-body p-4">
+                      <div class="text-center">
+                          <h5 class="fw-bolder">Las Bandurrias Genario 0,30m</h5>
+                          $1.990 C/U
+                      </div>
+                  </div>
+                  <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                      <div class="text-center"><a class="btn btn-outline-dark mt-auto" onclick="carro()"  href="#">Ver producto</a></div>
+                  </div>
+              </div>
+          </div>
+          <div class="col mb-5">
+              <div class="card h-100">
+                  <img class="card-img-top" src="{% static 'app/img/3.jpg' %}" alt="..." />
+                  <div class="card-body p-4">
+                      <div class="text-center">
+                          <h5 class="fw-bolder">Las Bandurrias Gerbera 0,2m</h5>
+                          $790 C/U
+                      </div>
+                  </div>
+                  <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                      <div class="text-center"><a class="btn btn-outline-dark mt-auto" onclick="carro()" href="#">Ver producto</a></div>
+                  </div>
+              </div>
+          </div>
+          <div class="col mb-5">
+              <div class="card h-100">
+                  <img class="card-img-top" src="{% static 'app/img/4.jpg' %}" alt="..." />
+                  <div class="card-body p-4">
+                      <div class="text-center">
+                          <h5 class="fw-bolder">Bougaivillea 18cm</h5>
+                          $990 C/U
+                      </div>
+                  </div>
+                  <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                      <div class="text-center"><a class="btn btn-outline-dark mt-auto" onclick="carro()" href="#">Ver producto</a></div>
+                  </div>
+              </div>
+          </div>
+          <div class="col mb-5">
+              <div class="card h-100">
+                  <img class="card-img-top" src="{% static 'app/img/5.jpg' %}" alt="..." />
+                  <div class="card-body p-4">
+                      <div class="text-center">
+                          <h5 class="fw-bolder">Las Bandurrias Gazania 0.15m</h5>
+                          $990 C/U
+                      </div>
+                  </div>
+                  <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                      <div class="text-center"><a class="btn btn-outline-dark mt-auto" onclick="carro()" href="#">Ver producto</a></div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- END CONTAINER -->
+
+  {% endblock %}
